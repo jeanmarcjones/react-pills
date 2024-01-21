@@ -1,0 +1,10 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{js,ts,jsx,tsx}"
+      run: yarn lint --fix {staged_files}
+      stage_fixed: true
+    check-types:
+      glob: "*.{ts,tsx}"
+      run: yarn tsc
